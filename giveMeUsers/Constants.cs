@@ -1,0 +1,8 @@
+﻿namespace GiveMeUsers
+{
+    public static class Constants
+    {
+        // I didn't want to put a mutable variable in a class but now it's dependant on this class. Should probably use a factory instead
+        public static readonly string GitHubAPIKey = "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";
+    }
+}
