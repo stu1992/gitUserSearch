@@ -7,18 +7,18 @@ namespace giveMeUsers.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class GetUsersController : ControllerBase
+    public class retrieveUsersController : ControllerBase
     {
-        private readonly ILogger<GetUsersController> _logger;
+        private readonly ILogger<retrieveUsersController> _logger;
         private readonly IUserService _service;
 
-        public GetUsersController(ILogger<GetUsersController> logger)
+        public retrieveUsersController(ILogger<retrieveUsersController> logger)
         {
             _logger = logger;
             _service = new UserService(new GithubClient());
         }
 
-        [HttpGet(Name = "GetUser")]
+        [HttpGet(Name = "retrieveUsers")]
         public ResponseUser[] Get([FromQuery] string[] user)
         {
             List<ResponseUser> response =  _service.getUser(user).Result;
